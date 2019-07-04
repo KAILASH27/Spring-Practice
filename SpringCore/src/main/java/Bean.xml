@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="spellcheck"
+		class="com.opentext.SpringCore.Beans.SpellChecker"></bean>
+
+	<!-- Default auto wiring (using ref) -->
+	<!-- <bean id="texteditor" class="com.opentext.SpringCore.Beans.TextEditor"> -->
+	<!-- <property name="name" value="Generic Text Editor"></property> -->
+	<!-- <property name="spellcheck" ref="spellcheck"></property> -->
+	<!-- </bean> -->
+
+	<!-- Autowiring by Name -->
+	<!-- <bean id="texteditor" -->
+	<!-- class="com.opentext.SpringCore.Beans.TextEditor" autowire="byName"> -->
+	<!-- <property name="name" value="Generic Text Editor"></property> -->
+	<!-- </bean> -->
+
+	<!-- Autowiring by Type -->
+	<!-- <bean id="texteditor" class="com.opentext.SpringCore.Beans.TextEditor" 
+		autowire="byType"> -->
+	<!-- <property name="name" value="Generic Text Editor"></property> -->
+	<!-- </bean> -->
+
+	<!-- Autowiring by Constructor -->
+	<bean id="texteditor"
+		class="com.opentext.SpringCore.Beans.TextEditor"
+		autowire="constructor">
+		<constructor-arg name="name"
+			value="Generic Text Editor"></constructor-arg>
+	</bean>
+</beans>
